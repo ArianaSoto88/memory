@@ -1,12 +1,13 @@
 // Array de cartas con sus contenidos
 const cards = 
-["img/triangulo_azul.jpg", 
-"img/triangulo_naranja.png", 
-"img/circulo_negro.png", 
-"img/rectangulo_rosa.png",
-"img/cuadrado_naranja.png"];
+["img/fantasma1.jpg", 
+"img/fantasma2.jpg", 
+"img/fantasma3.jpg", 
+"img/fantasma4.jpg",
+"img/fantasma5.jpg",
+"img/rectangulo_rosa.png"];
 
-const reverseImage = "img/fantasma1.jpg";
+const reverseImage = "img/sailor-mercury-sailor.png";
 const scores = {
   player1:0,
   player2:0,
@@ -106,17 +107,18 @@ function checkMatch() {
 // Función para iniciar el juego
 function startGame() {
   restartButton.style.visibility = "hidden";
-  startButton.disabled = false;
+  startButton.style.visibility = "visible";
   shuffleCards();
   createGameBoard();
   scores.player1 = 0;
   scores.player2 = 0;
   message.textContent = 'Score Player 1: 0 - Score Player 2: 0';
   setPlayerOnTurnText(1);
+  changeBackground();
 }
 
 function flipTodasLasCartas() {
-  this.disabled = true;
+  this.style.visibility = "hidden";
   shuffleCards();
   for (let i = 0; i < cards.length; i++) {
     crearTarjeta(i);
@@ -158,3 +160,18 @@ restartButton.addEventListener('click', startGame);
 
 // Iniciar el juego al cargar la página
 startGame();
+gameBoard.style.gridTemplateColumns = `repeat(${cards.length}, 1fr)`;
+"repeat(, 1fr)";
+
+function changeBackground(){
+  document.querySelector("body").style.background = `linear-gradient(to right,${getRandomHEXColor()},${getRandomHEXColor()})`;
+}
+
+function getRandomHEXColor() {
+  const SEED = '0123456789abcdef';
+  let output = '#';
+  while (output.length < 7) {
+    output += SEED[Math.floor(Math.random() * SEED.length)];
+  }
+  return output;
+}

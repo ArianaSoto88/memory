@@ -6,23 +6,19 @@
   <meta charset="UTF-8">
 </head>
 <body>
-    <div id="history">
-        <a href="history.html">Memory game history</a>
-        <a href="instructions.html">Instructions</a>
-    </div>
+    <h1 class="title1">Memory game</h1>
     <div class="game-board" id="gameBoard">
     <!-- Aquí se generarán las cartas del juego dinámicamente con JavaScript -->
     </div>
-    <button id="startButton">Play!</button>
-    <br>
-    <button id="restartButton">Play again!</button>
-    <div id="message"></div>
-    <br>
-    <div id="turn"></div>
+    <button id="startButton" class="button">▶</button>
+    <button id="restartButton" class="button-restart">🔄</button>
+    <div class="scores" id="message"></div>
+    <div class="scores" id="turn"></div>
     <script src="script.js"></script>
-    <p style="font-size:100px">&#129409;</p>
-    <p>I will display &#129409;</p>
-    <p>I will display &#x1F981;</p>
+    <div id="menu">
+      <a href="history.html">Memory game history</a>
+      <a href="instructions.html">Instructions</a>
+  </div>
 </body>
 </html>
 
